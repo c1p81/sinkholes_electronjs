@@ -1,0 +1,954 @@
+<html>
+   <head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Triage dei sinkholes</title>
+     <link rel="stylesheet" href="css/foundation.css" />
+     <script src="js/vendor/modernizr.js"></script>
+   </head>
+
+   <body>
+
+     <body>
+       <center><img src="img/logo.png"></center><br>
+       <div class="row">
+         <div class="large-12 columns" >
+           <center>
+   		<div id="titolo">
+   		<center>
+   		<h3>Elementi a rischio</h3>
+   		</center>
+   		</div>
+
+        <div class="row">
+
+          <div class="small-6 large-6 columns"><b>Elemento</b><br>&nbsp;</div>
+          <div class="small-6 large-6 columns"><b>Il coinvolgimento dell'elemento a rischio e'</b></div>
+        </div>
+
+        <form id="elementi" action="calcolo.html" data-abide>
+
+        <!-- ABITAZIONI ---->
+
+        <div class="row">
+
+          <div class="small-6 large-6 columns">Abitazioni</div>
+          <div class="small-3 large-3 columns">
+              <select id="abitazioni">
+               <option value = "0">Non applicabile</option>
+               <option value = "3">Presunto </option>
+               <option value = "4">Certo</option>
+            </select>
+          </div>
+
+          <div class="small-3 large-3 columns">
+            <select disabled id="nr_abitazioni">
+             <option value = "0">&lt;10 abitazioni</option>
+             <option value = "1">&ge;10 abitazioni</option>
+          </select>
+        </div>
+        </div>
+
+
+
+        <!-- OSPEDALI ---->
+
+        <div class="row">
+
+          <div class="small-6 large-6 columns">Ospedali</div>
+          <div class="small-6 large-6 columns">
+            <select id="ospedali">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- SCUOLE ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Scuole</div>
+          <div class="small-6 large-6 columns">
+            <select id="scuole">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+
+
+        <!-- ALBERGHI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Alberghi</div>
+          <div class="small-6 large-6 columns">
+            <select id="alberghi">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- INSEDIAMENTI TURISTICI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Insediamenti turistici</div>
+          <div class="small-6 large-6 columns">
+            <select id="insediamenti">
+             <option value = "0">Non applicabile</option>
+             <option value = "2">Presunto </option>
+             <option value = "3">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- DIGHE ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Scuole</div>
+          <div class="small-6 large-6 columns">
+            <select id="dighe">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- BENI ARCHITETTONICI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Beni architettonici</div>
+          <div class="small-6 large-6 columns">
+            <select id="architettonici">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+
+        <!-- EDIFICI PUBBLICI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Edifici pubblici</div>
+          <div class="small-6 large-6 columns">
+            <select id="pubblici">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- CASERME ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Caserme</div>
+          <div class="small-6 large-6 columns">
+            <select id="caserme">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- EDIFICI COMMERCIALI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Edifici commerciali</div>
+          <div class="small-6 large-6 columns">
+            <select id="commerciali">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- AREE PORTUALI AEROPORTUALI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Aree portuali/aeroportuali</div>
+          <div class="small-6 large-6 columns">
+            <select id="porti">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+
+        <!-- DIGHE ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Dighe</div>
+          <div class="small-6 large-6 columns">
+            <select id="dighe">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+
+        <!-- CENTRALI ELETTRICHE ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Centrali elettriche</div>
+          <div class="small-6 large-6 columns">
+            <select id="elettriche">
+             <option value = "0">Non applicabile</option>
+             <option value = "3">Presunto </option>
+             <option value = "4">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- IMPIANTI TECNOLOGICI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Impianti tecnologici</div>
+          <div class="small-6 large-6 columns">
+            <select id="tecnologici">
+             <option value = "0">Non applicabile</option>
+             <option value = "2">Presunto </option>
+             <option value = "3">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- LINEE DI SERVIZI ---->
+        <div class="row">
+          <div class="small-6 large-6 columns">Linee di servizi</div>
+          <div class="small-6 large-6 columns">
+            <select id="linee_servizi">
+             <option value = "0">Non applicabile</option>
+             <option value = "2">Presunto </option>
+             <option value = "3">Certo</option>
+          </select>
+        </div>
+        </div>
+
+        <!-- FERROVIE PRINCIPALI ---->
+
+        <div class="row">
+
+          <div class="small-6 large-6 columns">Ferrovie principali</div>
+          <div class="small-3 large-3 columns">
+            <select id="pferrovia">
+              <option value = "0">Non applicabile</option>
+              <option value = "2">Presunto </option>
+              <option value = "3">Certo</option>
+          </select>
+        </div>
+          <div class="small-3 large-3 columns">
+              <select disabled id="stato_pferrovia">
+               <option value = "0">Chiusa</option>
+               <option value = "1">Aperta </option>
+            </select>
+          </div>
+        </div>
+
+
+      <!-- FERROVIE SECONDARIE ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Ferrovie secondarie</div>
+        <div class="small-3 large-3 columns">
+          <select id="sferrovia">
+            <option value = "0">Non applicabile</option>
+            <option value = "2">Presunto </option>
+            <option value = "3">Certo</option>
+        </select>
+      </div>
+        <div class="small-3 large-3 columns">
+            <select disabled id="stato_sferrovia">
+             <option value = "0">Chiusa</option>
+             <option value = "1">Aperta </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- AUTOSTRADE ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Autostrade</div>
+        <div class="small-3 large-3 columns">
+          <select id="autostrada">
+            <option value = "0">Non applicabile</option>
+            <option value = "2">Presunto </option>
+            <option value = "3">Certo</option>
+        </select>
+      </div>
+        <div class="small-3 large-3 columns">
+            <select disabled id="stato_autostrada">
+             <option value = "0">Chiusa</option>
+             <option value = "1">Aperta </option>
+          </select>
+        </div>
+      </div>
+
+
+
+      <!-- STRADE STATALI/PROVINCIALI ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Strade statali/provinciali</div>
+          <div class="small-2 large-2 columns">
+            <select id="sprov">
+              <option value = "0">Non applicabile</option>
+              <option value = "2">Presunto </option>
+              <option value = "3">Certo</option>
+          </select>
+        </div>
+        <div class="small-2 large-2 columns">
+            <select disabled id="sprov_stato">
+             <option value = "0">Chiusa</option>
+             <option value = "1">Aperta </option>
+          </select>
+        </div>
+        <div class="small-2 large-2 columns">
+            <select disabled id="sprov_isola">
+             <option value = "0">Isola</option>
+             <option value = "1">Non isola </option>
+          </select>
+        </div>
+      </div>
+
+
+
+      <!-- STRADE COMUNALI ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Strade comunali</div>
+          <div class="small-2 large-2 columns">
+            <select id="scom">
+              <option value = "0">Non applicabile</option>
+              <option value = "2">Presunto </option>
+              <option value = "3">Certo</option>
+          </select>
+        </div>
+        <div class="small-2 large-2 columns">
+            <select disabled id="scom_stato">
+             <option value = "0">Chiusa</option>
+             <option value = "1">Aperta </option>
+          </select>
+        </div>
+        <div class="small-2 large-2 columns">
+            <select disabled id="scom_isola">
+             <option value = "0">Isola</option>
+             <option value = "1">Non isola </option>
+          </select>
+        </div>
+      </div>
+
+
+      <!-- STRADE STERRATE ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Strade sterrate</div>
+        <div class="small-6 large-6 columns">
+          <select id="ssterrate">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+    </div>
+
+      <!-- CAVE ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Strade sterrate</div>
+        <div class="small-6 large-6 columns">
+          <select id="cave">
+            <option value = "0">Non applicabile</option>
+            <option value = "2">Presunto </option>
+            <option value = "3">Certo</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- IMPIANTI SPORTIVI ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Impianti sportivi</div>
+        <div class="small-6 large-6 columns">
+          <select id="sportivi">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- PARCHI GIARDINI PUBBLICI ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Parchi/Giardini pubblici</div>
+        <div class="small-6 large-6 columns">
+          <select id="parchi">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+      </div>
+
+
+      <!-- SERRE ALLEVAMENTI ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Serre/Allevamenti</div>
+        <div class="small-6 large-6 columns">
+          <select id="serre">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- ZOME AGRICOLE DI PREGIO ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Zone agricole di pregio</div>
+        <div class="small-6 large-6 columns">
+          <select id="agricole_pregio">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- ZOME AGRICOLE GENERICHE ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Zone agricole generiche</div>
+        <div class="small-6 large-6 columns">
+          <select id="agricole_generiche">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+    </div>
+
+      <!-- BOSCHI ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Boschi</div>
+        <div class="small-6 large-6 columns">
+          <select id="boschi">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- PASCOLI ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Pascoli</div>
+        <div class="small-6 large-6 columns">
+          <select id="pascoli">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+      </div>
+
+
+      <!-- INCOLTO ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Incolto</div>
+        <div class="small-6 large-6 columns">
+          <select id="incolto">
+            <option value = "0">Non applicabile</option>
+            <option value = "1">Presunto </option>
+            <option value = "2">Certo</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- ESPOSIZIONE PERSONE ---->
+      <div class="row">
+        <div class="small-6 large-6 columns">Esposizione</div>
+        <div class="small-6 large-6 columns">
+          <select id="esposizione">
+            <option value = "2">Area interdetta</option>
+            <option value = "3">Presenza di passanti </option>
+            <option value = "4">Presenza di residenti</option>
+        </select>
+      </div>
+      </div>
+
+      <center> <button class="button round" id="saveAndGo" type="submit">Avanti >>></button></center>
+
+
+    </form>
+
+
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+          <script src="js/vendor/jquery.js"></script>
+          <script src="js/foundation.min.js"></script>
+
+          <!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+          <script>
+            $(document).bind('mobileinit',function(){
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
+
+      <script>
+         //$(document).ready(function() {
+            $(document).foundation();
+
+            var max = 1;
+            var test_ab = 1;
+            var test_pf = 1;
+            var test_ps = 1;
+            var test_au = 1;
+
+            $("#saveAndGo").click(function() {
+
+              if (test_ab > max)
+                {
+                  max = test_ab;
+                }
+            if (test_pf > max)
+                  {
+                    max = test_pf;
+                  }
+            if (test_ps > max)
+                    {
+                      max = test_ps;
+                    }
+            if (test_au > max)
+                      {
+                        max = test_au;
+                      }
+
+
+                alert("Indice elementi a rischio "+ max);
+                sessionStorage.setItem("elementi",max);
+
+                //const fs = require('fs');
+                //fs.writeFile("/tmp/test.txt", "Hey there!", function(err) {
+                //if(err) {
+                //    return console.log(err);
+                //    }
+                //    console.log("The file was saved!");
+                //});
+                //alert("salvataggio");
+
+                 //$("#elementi" ).submit();
+            });
+
+
+// CALCOLO ABITAZIONI///////////////////////////////////
+            $("#abitazioni").change(function() {
+                //alert($("#pferrovia" ).val());
+                if ($("#abitazioni" ).val() > 0)
+                {
+                  $("#nr_abitazioni" ).prop( "disabled", false );
+                }
+                  else {
+                    $("#nr_abitazioni" ).prop( "disabled", true );
+                  }
+
+                /// calcolo
+                if ($("#abitazioni" ).val() > 0)
+                    {
+                      if (($("#abitazioni" ).val() == 3) && ($("#nr_abitazioni" ).val() == 0)) test_ab = 2;
+                      if (($("#abitazioni" ).val() == 4) && ($("#nr_abitazioni" ).val() == 0)) test_ab = 3;
+                      if (($("#abitazioni" ).val() == 3) && ($("#nr_abitazioni" ).val() == 1)) test_ab = 3;
+                      if (($("#abitazioni" ).val() == 4) && ($("#nr_abitazioni" ).val() == 1)) test_ab = 4;
+
+                    }
+                    else {
+                      test_ab = 1;
+                    }
+
+                    alert(test_ab);
+            });
+
+            $("#nr_abitazioni").change(function() {
+                /// calcolo
+                if ($("#abitazioni" ).val() > 0)
+                    {
+                      if (($("#abitazioni" ).val() == 3) && ($("#nr_abitazioni" ).val() == 0)) test_ab = 2;
+                      if (($("#abitazioni" ).val() == 4) && ($("#nr_abitazioni" ).val() == 0)) test_ab = 3;
+                      if (($("#abitazioni" ).val() == 3) && ($("#nr_abitazioni" ).val() == 1)) test_ab = 3;
+                      if (($("#abitazioni" ).val() == 4) && ($("#nr_abitazioni" ).val() == 1)) test_ab = 4;
+
+                    }
+                    else {
+                      test_ab = 1;
+                    }
+
+                   alert(test_ab);
+            });
+
+
+// CALCOLO FERROVIE PRINCIPALI///////////////////////////////////
+                        $("#pferrovia").change(function() {
+                            alert($("#pferrovia" ).val())
+                            if ($("#pferrovia" ).val() > 0)
+                            {
+                              $("#stato_pferrovia" ).prop( "disabled", false );
+                              alert($("#stato_pferrovia" ).val())
+                            }
+                              else {
+                                $("#stato_pferrovia" ).prop( "disabled", true );
+                              }
+
+                            /// calcolo
+                            if ($("#pferrovia" ).val() > 0)
+                                {
+                                  if (($("#pferrovia" ).val() == 2) && ($("#stato_pferrovia" ).val() == 0)) test_pf = 2;
+                                  if (($("#pferrovia" ).val() == 3) && ($("#stato_pferrovia" ).val() == 0)) test_pf = 3;
+                                  if (($("#pferrovia" ).val() == 2) && ($("#stato_pferrovia" ).val() == 1)) test_pf = 2;
+                                  if (($("#pferrovia" ).val() == 3) && ($("#stato_pferrovia" ).val() == 1)) test_pf = 4;
+
+                                }
+                                else {
+                                  test_pf = 1;
+                                }
+
+                                alert(test_pf);
+                        });
+
+                        $("#stato_pferrovia").change(function() {
+                            /// calcolo
+                            if ($("#stato_pferrovia" ).val() > 0)
+                                {
+                                  if (($("#pferrovia" ).val() == 2) && ($("#stato_pferrovia" ).val() == 0)) test_pf = 2;
+                                  if (($("#pferrovia" ).val() == 3) && ($("#stato_pferrovia" ).val() == 0)) test_pf = 3;
+                                  if (($("#pferrovia" ).val() == 2) && ($("#stato_pferrovia" ).val() == 1)) test_pf = 2;
+                                  if (($("#pferrovia" ).val() == 3) && ($("#stato_pferrovia" ).val() == 1)) test_pf = 4;
+
+                                }
+                                else {
+                                  test_pf = 1;
+                                }
+
+                                alert(test_pf);
+                        });
+
+
+// CALCOLO FERROVIE SECONDARIE///////////////////////////////////
+              $("#sferrovia").change(function() {
+                  alert($("#sferrovia" ).val())
+                  if ($("#sferrovia" ).val() > 0)
+                  {
+                    $("#stato_sferrovia" ).prop( "disabled", false );
+                    alert($("#stato_sferrovia" ).val())
+                  }
+                    else {
+                      $("#stato_sferrovia" ).prop( "disabled", true );
+                    }
+
+                  /// calcolo
+                  if ($("#sferrovia" ).val() > 0)
+                      {
+                        if (($("#sferrovia" ).val() == 2) && ($("#stato_sferrovia" ).val() == 0)) test_sf = 2;
+                        if (($("#sferrovia" ).val() == 3) && ($("#stato_sferrovia" ).val() == 0)) test_sf = 3;
+                        if (($("#sferrovia" ).val() == 2) && ($("#stato_sferrovia" ).val() == 1)) test_sf = 2;
+                        if (($("#sferrovia" ).val() == 3) && ($("#stato_sferrovia" ).val() == 1)) test_sf = 4;
+
+                      }
+                      else {
+                        test_sf = 1;
+                      }
+
+                      alert(test_sf);
+              });
+
+              $("#stato_sferrovia").change(function() {
+                  /// calcolo
+                  if ($("#stato_sferrovia" ).val() > 0)
+                      {
+                        if (($("#sferrovia" ).val() == 2) && ($("#stato_sferrovia" ).val() == 0)) test_pf = 2;
+                        if (($("#sferrovia" ).val() == 3) && ($("#stato_sferrovia" ).val() == 0)) test_pf = 3;
+                        if (($("#sferrovia" ).val() == 2) && ($("#stato_sferrovia" ).val() == 1)) test_pf = 2;
+                        if (($("#sferrovia" ).val() == 3) && ($("#stato_sferrovia" ).val() == 1)) test_pf = 4;
+
+                      }
+                      else {
+                        test_pf = 1;
+                      }
+
+                      alert(test_pf);
+              });
+
+// CALCOLO AUTOSTRADE///////////////////////////////////
+            $("#autostrada").change(function() {
+                alert($("#autostrada" ).val())
+                if ($("#autostrada" ).val() > 0)
+                {
+                  $("#stato_autostrada" ).prop( "disabled", false );
+                  alert($("#stato_autostrada" ).val())
+                }
+                  else {
+                    $("#stato_autostrada" ).prop( "disabled", true );
+                  }
+
+                /// calcolo
+                if ($("#autostrada" ).val() > 0)
+                    {
+                      if (($("#autostrada" ).val() == 2) && ($("#stato_autostrada" ).val() == 0)) test_au = 2;
+                      if (($("#autostrada" ).val() == 3) && ($("#stato_autostrada" ).val() == 0)) test_au = 3;
+                      if (($("#autostrada" ).val() == 2) && ($("#stato_autostrada" ).val() == 1)) test_au = 2;
+                      if (($("#autostrada" ).val() == 3) && ($("#stato_autostrada" ).val() == 1)) test_au = 4;
+
+                    }
+                    else {
+                      test_au = 1;
+                    }
+
+                    alert(test_au);
+            });
+
+            $("#stato_autostrada").change(function() {
+                /// calcolo
+                if ($("#stato_autostrada" ).val() > 0)
+                    {
+                      if (($("#autostrada" ).val() == 2) && ($("#stato_autostrada" ).val() == 0)) test_au = 2;
+                      if (($("#autostrada" ).val() == 3) && ($("#stato_autostrada" ).val() == 0)) test_au = 3;
+                      if (($("#autostrada" ).val() == 2) && ($("#stato_autostrada" ).val() == 1)) test_au = 2;
+                      if (($("#autostrada" ).val() == 3) && ($("#stato_autostrada" ).val() == 1)) test_au = 4;
+
+                    }
+                    else {
+                      test_au = 1;
+                    }
+
+                    alert(test_au);
+            });
+
+
+            $("#sprov").change(function() {
+                //alert($("#pferrovia" ).val());
+                if ($("#sprov" ).val() > 0)
+                {
+                  $("#sprov_stato" ).prop( "disabled", false );
+                  $("#sprov_isola" ).prop( "disabled", false );
+
+                }
+                  else {
+                    $("#sprov_stato" ).prop( "disabled", true );
+                    $("#sprov_isola" ).prop( "disabled", true );
+
+                  }
+            });
+
+            $("#scom").change(function() {
+                //alert($("#pferrovia" ).val());
+                if ($("#scom" ).val() > 0)
+                {
+                  $("#scom_stato" ).prop( "disabled", false );
+                  $("#scom_isola" ).prop( "disabled", false );
+
+                }
+                  else {
+                    $("#scom_stato" ).prop( "disabled", true );
+                    $("#scom_isola" ).prop( "disabled", true );
+
+                  }
+            });
+
+
+             // OSPEDALI
+            $("#ospedali").change(function(){
+                var test = $("#ospedali" ).val();
+                if (test > max)
+                  {
+                    max = test;
+                  }
+                //alert(test+" max "+max);
+              });
+
+              // ---------------- OSPEDALI ---------------------
+             $("#scuole").change(function(){
+                 var test = $("#scuole" ).val();
+                 if (test > max)
+                   {
+                     max = test;
+                   }
+                 //alert(test+" max "+max);
+               });
+               // ---------------- ALBERGHI ---------------------
+              $("#alberghi").change(function(){
+                  var test = $("#alberghi" ).val();
+                  if (test > max)
+                    {
+                      max = test;
+                    }
+                  //alert(test+" max "+max);
+                });
+                // ---------------- INSEDIAMENTI ---------------------
+               $("#insediamenti").change(function(){
+                   var test = $("#insediamenti" ).val();
+                   if (test > max)
+                     {
+                       max = test;
+                     }
+                   //alert(test+" max "+max);
+                 });
+                 // ---------------- DIGHE ---------------------
+                $("#dighe").change(function(){
+                    var test = $("#dighe" ).val();
+                    if (test > max)
+                      {
+                        max = test;
+                      }
+                    //alert(test+" max "+max);
+                  });
+                  // ---------------- ARCHITETTONICI ---------------------
+                 $("#architettonici").change(function(){
+                     var test = $("#architettonici" ).val();
+                     if (test > max)
+                       {
+                         max = test;
+                       }
+                     //alert(test+" max "+max);
+                   });
+                   // ---------------- PUBBLICI ---------------------
+                  $("#pubblici").change(function(){
+                      var test = $("#pubblici" ).val();
+                      if (test > max)
+                        {
+                          max = test;
+                        }
+                      //alert(test+" max "+max);
+                    });
+                    // ---------------- CASERME ---------------------
+                   $("#caserme").change(function(){
+                       var test = $("#caserme" ).val();
+                       if (test > max)
+                         {
+                           max = test;
+                         }
+                       //alert(test+" max "+max);
+                     });
+                     // ---------------- COMMERCIALI ---------------------
+                    $("#commerciali").change(function(){
+                        var test = $("#commerciali" ).val();
+                        if (test > max)
+                          {
+                            max = test;
+                          }
+                        //alert(test+" max "+max);
+                      });
+
+                      // ---------------- PORTI ---------------------
+                     $("#porti").change(function(){
+                         var test = $("#porti" ).val();
+                         if (test > max)
+                           {
+                             max = test;
+                           }
+                         //alert(test+" max "+max);
+                       });
+
+                       // ---------------- DIGHE ---------------------
+                      $("#dighe").change(function(){
+                          var test = $("#dighe" ).val();
+                          if (test > max)
+                            {
+                              max = test;
+                            }
+                          //alert(test+" max "+max);
+                        });
+
+                        // ---------------- ELETTRICHE ---------------------
+                       $("#elettriche").change(function(){
+                           var test = $("#elettriche" ).val();
+                           if (test > max)
+                             {
+                               max = test;
+                             }
+                           //alert(test+" max "+max);
+                         });
+                         // ---------------- TECNOLOGICI ---------------------
+                        $("#tecnologici").change(function(){
+                            var test = $("#tecnologici" ).val();
+                            if (test > max)
+                              {
+                                max = test;
+                              }
+                            //alert(test+" max "+max);
+                          });
+                          // ---------------- PARCHI ---------------------
+                         $("#parchi").change(function(){
+                             var test = $("#parchi" ).val();
+                             if (test > max)
+                               {
+                                 max = test;
+                               }
+                             //alert(test+" max "+max);
+                           });
+                           // ---------------- SERRE ---------------------
+                          $("#serre").change(function(){
+                              var test = $("#serre" ).val();
+                              if (test > max)
+                                {
+                                  max = test;
+                                }
+                              //alert(test+" max "+max);
+                            });
+                            // ---------------- AGRICOLE PREGIO ---------------------
+                           $("#agricole_pregio").change(function(){
+                               var test = $("#agricole_pregio" ).val();
+                               if (test > max)
+                                 {
+                                   max = test;
+                                 }
+                               //alert(test+" max "+max);
+                             });
+                             // ---------------- AGRICOLE GENERICHE ---------------------
+                            $("#agricole_generiche").change(function(){
+                                var test = $("#agricole_generiche" ).val();
+                                if (test > max)
+                                  {
+                                    max = test;
+                                  }
+                                //alert(test+" max "+max);
+                              });
+                              // ---------------- BOSCHI ---------------------
+                             $("#boschi").change(function(){
+                                 var test = $("#boschi" ).val();
+                                 if (test > max)
+                                   {
+                                     max = test;
+                                   }
+                                 //alert(test+" max "+max);
+                               });
+                               // ---------------- PASCOLI ---------------------
+                                           // ---------------- PASCOLI ---------------------
+                              $("#pascoli").change(function(){
+                                  var test = $("#pascoli" ).val();
+                                  if (test > max)
+                                    {
+                                      max = test;
+                                    }
+                                  //alert(test+" max "+max);
+                                });
+
+                                // ---------------- INCOLTO ---------------------
+                               $("#incolto").change(function(){
+                                   var test = $("#incolto" ).val();
+                                   if (test > max)
+                                     {
+                                       max = test;
+                                     }		 //alert($("#sistema option:selected" ).text());
+
+                                   //alert(test+" max "+max);
+                                 });
+                                 // ---------------- ESPOSIZIONE ---------------------
+                                $("#esposizione").change(function(){
+                                    var test = $("#esposizione" ).val();
+                                    if (test > max)
+                                      {
+                                        max = test;
+                                      }
+                                    alert(test+" max "+max);
+                                  });
+
+
+        //});
+      </script>
+   </body>
+</html>

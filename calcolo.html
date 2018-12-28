@@ -1,0 +1,189 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triage dei sinkholes</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+
+    <style>
+    #centrato {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+
+    /*
+    *  Where the magic happens
+    *  Centering method from CSS Tricks
+    *  http://css-tricks.com/centering-percentage-widthheight-elements/
+    */
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+</style>
+
+  </head>
+  <body>
+    <center><img src="img/logo.png"></center><br>
+    <div class="row">
+      <div class="large-12 columns" >
+        <center>
+		<div id="titolo">
+		<center>
+		<h3>Calcolo</h3>
+		</center>
+		</div>
+
+    <div class="row">
+ 	      <div class="large-12 columns" >
+ 		  <center>
+ 		  <canvas id="myCanvas" width="200" height="200"></canvas>
+ 		  <br><br>
+ 		  <a href="#" class="button round" id="avanti">Tona all'inizio</a>
+ 		  </center>
+ 		</div>
+
+ 	</div>
+
+
+    </div>
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+
+    <!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+	<script>
+    $(document).bind('mobileinit',function(){
+        $.mobile.pushStateEnabled = false;
+    });
+</script>
+
+	<script src="js/jquery.mobile.min.js"></script>
+    <script>
+      $(document).foundation();
+      $('#avanti').click(function(){
+              window.location.href="index.html";
+        });
+
+      $( document).ready(function() {
+          var diametro = sessionStorage.getItem("diametro");
+          var deformazione = sessionStorage.getItem("deformazione");
+          var pericolo = sessionStorage.getItem("pericolo");
+          var elemento = sessionStorage.getItem("elementi");
+          alert("Indice morfometria: "+ diametro+"\n Indice deformazione: "+ deformazione+" \n Indice pericolo: "+ pericolo+" \n Indice elementi a rischio: "+ elemento);
+
+          var arr_x = [
+                      [1, 1, 3, 3],
+                      [1, 2, 3, 4],
+                      [2, 3, 3, 4],
+                      [3, 3, 4, 4]
+                      ];
+
+          var arr_k = [
+                      [1, 1, 2, 2],
+                      [2, 2, 2, 3],
+                      [3, 3, 3, 4],
+                      [4, 4, 4, 4]
+                      ];
+
+          var arr_r = [
+                      [1, 1, 2, 2],
+                      [1, 2, 3, 3],
+                      [2, 2, 4, 4],
+                      [2, 3, 4, 4]
+                      ];
+
+      //il primo indice e' quello riga, il secondo della colonna
+      var x_calc = arr_x[diametro-1][deformazione-1];
+      alert("Risultato matrice X " +  x_calc);
+      var k_calc = arr_k[pericolo-1][x_calc-1];
+      alert("Risultato matrice K " + k_calc);
+      var r_calc = arr_r[elemento-1][k_calc-1];
+      alert("Risultato matrice R " + r_calc);
+
+      // salva i dati su file
+      var sinkhole = {};
+      sinkhole.localita = sessionStorage.getItem("localita");
+      sinkhole.comune = sessionStorage.getItem("comune");
+      sinkhole.data = sessionStorage.getItem("data");
+      sinkhole.ora = sessionStorage.getItem("ora");
+      sinkhole.compilatore = sessionStorage.getItem("compilatore");
+      sinkhole.annotazioni = sessionStorage.getItem("annotazioni");
+      sinkhole.nord = sessionStorage.getItem("nord");
+      sinkhole.est = sessionStorage.getItem("est");
+      sinkhole.sistema = sessionStorage.getItem("sistema");
+
+      sinkhole.diametro = diametro;
+      sinkhole.deformazione = deformazione;
+      sinkhole.pericolo = pericolo;
+      sinkhole.elemento = elemento;
+      sinkhole.x = x_calc;
+      sinkhole.k = k_calc;
+      sinkhole.r = r_calc;
+      var esportazione = JSON.stringify(sinkhole);
+
+      const fs = require('fs');
+      var nome_file = sessionStorage.getItem("comune")+"_"+sessionStorage.getItem("ora")+".json";
+      fs.writeFile(nome_file, esportazione, (err) => {
+        if(err){
+            alert("An error ocurred creating the file "+ err.message)
+        }
+        else {
+          alert("File salvato come " + nome_file);
+        }
+      });
+      console.log(JSON.stringify(sinkhole));
+
+      //disegna l'icona
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var radius = 90;
+
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = 'red';
+
+        switch(r_calc) {
+          case 1:
+              context.fillStyle = 'white';
+              break;
+          case 2:
+              context.fillStyle = 'green';
+              break;
+          case 3:
+            context.fillStyle = 'yellow';
+            break;
+          case 4:
+            context.fillStyle = 'red';
+            break;
+          default:
+            // code block
+        }
+
+
+        context.fill();
+        context.lineWidth = 2;
+        context.strokeStyle = '#000000';
+        context.stroke();
+      })
+
+	  $(document).bind('swiperight', function () {
+	 			window.location.href="index.html";
+		});
+
+
+
+    </script>
+  </body>
+</html>
